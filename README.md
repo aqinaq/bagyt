@@ -33,6 +33,20 @@ Responsive layouts support desktop and mobile screens. Keyboard controls, visibl
 
 Built with React, TypeScript, and Vite, with React Router for navigation and Lucide icons.
 
+## Routing and Vercel deployment
+
+The app uses Vite and React Router's `BrowserRouter`. Vercel builds with `npm run build` and serves `dist`. The root `vercel.json` rewrites `/programmes/*` requests to `/index.html`, so course URLs work when opened directly or refreshed. React Router renders the requested course without changing the URL. The rule does not match `/assets/*`, `/images/*`, `/fonts/*`, or `/favicon.svg`.
+
+`public/_redirects` is for hosts that support that file; Vercel uses `vercel.json`. Redeploy the project after uploading this configuration. In Vercel, the Root Directory must point to the directory containing `package.json` and `vercel.json`.
+
+To check a local production build, run `npm run build`, start `npm run preview`, then run `npm test -- tests/routes.spec.ts` in another terminal. Each programme is checked through a home-page link, in a new tab opened directly, and after a reload. Static images, fonts, favicon, JS and CSS are checked for successful responses and correct content types.
+
+To run the same checks against a deployment:
+
+```sh
+PLAYWRIGHT_BASE_URL=https://your-project.vercel.app npm test -- tests/routes.spec.ts
+```
+
 ## About the demo
 
 BAGYT Academy is a fictional academy, and the site does not accept real enrolments or send consultation requests. The programme finder uses simple matching rules; it is not a language placement test.
