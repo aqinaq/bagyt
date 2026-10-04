@@ -1,47 +1,45 @@
 # BAGYT Academy
 
-A complete, fictional Kazakhstan learning academy portfolio demo. Built as an independent React + TypeScript + Vite project; it does not modify the MammaMia demo.
+BAGYT Academy is a bilingual website concept for a fictional learning academy in Almaty, Kazakhstan. It helps prospective learners explore language and creative courses, compare their options, and find a programme that fits their goals.
 
-## Run
+The project is a portfolio demo of the journey from discovering a course to completing a consultation form. Its central idea is choosing your next direction, expressed through an interactive compass and the message: **“Келесі қадамыңды таңда.” — “Choose your next step.”**
 
-```sh
-npm install
-npm run dev -- --host 127.0.0.1 --port 4178 --strictPort
-```
+## The experience
 
-Open http://127.0.0.1:4178. This dedicated port avoids the first portfolio project's preview.
+- **Kazakh and Russian:** switch languages throughout the site, including course details and forms.
+- **Interactive course compass:** explore four learning directions using a mouse, touch, or keyboard.
+- **Programme explorer:** filter courses by subject and online or in-person format.
+- **Course details:** review entry requirements, curriculum, a sample study week, expected outcomes, and example tuition fees.
+- **Side-by-side comparison:** compare two programmes by duration, level, workload, format, and price.
+- **Programme finder:** answer three questions about your goal, experience, and preferred format to find a matching course.
+- **Demo consultation:** complete a form with validation, review your details, and see a confirmation screen.
 
-```sh
-npm run build
-npm run preview -- --host 127.0.0.1 --port 4178
-npm test
-```
+## Learning directions
 
-Browser tests expect the app running at http://127.0.0.1:4178. Install Chromium with `npx playwright install chromium` if necessary. The suite covers Kazakh and Russian on desktop and 360px mobile, all course routes, filters and empty states, comparison and its selection limit, finder matching and back navigation, consultation validation and review, language persistence, form progress, contact privacy, focus trapping, menu dismissal, image loading, and horizontal overflow.
+| Programme | Focus | Format |
+| --- | --- | --- |
+| General English | English for everyday communication | Online or in person |
+| IELTS | Academic exam preparation across all four sections | Online or in person |
+| Everyday Kazakh | Practical language for daily conversations | Online |
+| Interior Design | Space planning, colour, materials, and a first room concept | In person |
 
-## Structure
+In-person formats are set in Almaty. All programmes, schedules, and prices are illustrative.
 
-- `src/data.ts`: localized programme data and deterministic matching.
-- `src/i18n.ts`: Kazakh and Russian interface copy.
-- `src/main.tsx`: routes and reusable interface components.
-- `src/styles.css`: responsive styling and reduced-motion support.
-- `tests/journeys.spec.ts`: complete browser journeys.
+## Design and interaction
 
-## Routes and deployment
+The visual identity combines bold typography, orange accents, directional arrows, and individual course symbols. Scroll progress, section navigation, and animated transitions reinforce the idea of moving toward a new goal.
 
-- `/`
-- `/programmes/general-english`
-- `/programmes/ielts`
-- `/programmes/everyday-kazakh`
-- `/programmes/interior-design`
+Responsive layouts support desktop and mobile screens. Keyboard controls, visible focus states, modal focus management, and reduced-motion support are part of the interface.
 
-Deploy the `dist` directory on a static host and configure fallback to `/index.html` for non-file routes. `public/_redirects` includes the Netlify/Cloudflare Pages fallback. Vite's dev and preview servers already support direct course links.
+Built with React, TypeScript, and Vite, with React Router for navigation and Lucide icons.
 
-## Demo privacy
+## About the demo
 
-There is no backend, submission request, analytics, or tracking. Language and selected comparison course IDs may be saved in localStorage. Personal contact information exists only in React memory while the consultation is open; it is cleared on completion or closing the form. Reloading clears the form. Changing languages preserves progress.
+BAGYT Academy is a fictional academy, and the site does not accept real enrolments or send consultation requests. The programme finder uses simple matching rules; it is not a language placement test.
 
-Course fees are fictional prices per four weeks; full course totals are calculated proportionally. No student counts, instructor credentials, testimonials, or guaranteed exam outcomes are claimed.
+There is no backend, analytics, or tracking. Language preferences and comparison selections may be saved in the browser. Contact details remain in memory while the consultation is open and are cleared when it is closed or completed.
+
+Example fees are shown in Kazakhstani tenge per four weeks, with full course totals on the programme pages.
 
 ## Assets
 
@@ -51,4 +49,3 @@ Photographs are downloaded and served locally under the [Unsplash License](https
 - Collaborative learning: https://images.unsplash.com/photo-1522202176988-66273c2fd55f
 
 Noto Sans is locally hosted and subset to Latin, Cyrillic (including Ә Ғ Қ Ң Ө Ұ Ү Һ І), punctuation, arrows and the tenge symbol. Source: https://github.com/google/fonts/tree/main/ofl/notosans. SIL Open Font License is included at `public/fonts/OFL.txt`.
-# bagyt
